@@ -1,0 +1,39 @@
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Generated files
+*.min.js
+*.min.css
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Cache directories
+.cache/
+.parcel-cache/

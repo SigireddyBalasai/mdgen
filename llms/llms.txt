@@ -1,0 +1,7 @@
+# Project Name
+
+> Project description goes here
+
+## Documentation
+
+- [Getting Started](docs/getting-started.md): Introduction to the project
