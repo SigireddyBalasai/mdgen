@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import tailwindcss from '@tailwindcss/vite';
 import { cloudflare } from '@cloudflare/vite-plugin';
 import { execSync } from 'child_process';
+import { VitePWA } from 'vite-plugin-pwa';
 
 import llmsPlugin from './plugins/llmsPlugin.ts';
 import qrDevPlugin from './plugins/qrDevPlugin.ts';
@@ -27,5 +28,29 @@ export default defineConfig({
     }),
     qrDevPlugin(),
     cloudflare(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'mdgen',
+        short_name: 'mdgen',
+        description: 'A fast, accessible, and mobile-friendly Vite + React app by Sigireddy Balasai.',
+        start_url: '.',
+        display: 'standalone',
+        background_color: '#ffffff',
+        theme_color: '#2563eb',
+        icons: [
+          {
+            src: '/vite.svg',
+            sizes: '192x192',
+            type: 'image/svg+xml',
+          },
+          {
+            src: '/vite.svg',
+            sizes: '512x512',
+            type: 'image/svg+xml',
+          },
+        ],
+      },
+    }),
   ],
 });
