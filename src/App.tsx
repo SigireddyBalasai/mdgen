@@ -1,6 +1,6 @@
 import { useState, useCallback, lazy, Suspense } from 'react';
 const viteLogo = '/vite.svg';
-const reactLogo = './assets/react.svg';
+import reactLogo from './assets/react.svg';
 const Footer = lazy(() => import('./Footer'));
 const Button = lazy(() => import('./components/Button'));
 
@@ -42,7 +42,7 @@ function App() {
           >
             <img
               alt='React logo'
-              className='h-20 w-20 sm:h-24 sm:w-24 p-4 sm:p-6 transition-filter duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] animate-spin-slow'
+              className='h-20 w-20 sm:h-24 sm:w-24 p-4 sm:p-6 transition-filter duration-300 hover:drop-shadow-lg animate-spin-slow'
               src={reactLogo}
               width={LOGO_SIZE}
               height={LOGO_SIZE}
@@ -61,7 +61,7 @@ function App() {
             aria-label='Increment counter'
             onClick={increment}
             tabIndex={0}
-            className='focus-visible:ring-4 focus-visible:ring-blue-400 w-full sm:w-auto'
+            className='focus-visible:ring-4 focus-visible:ring-blue-500 w-full sm:w-auto'
           >
             <span
               className='transition-all duration-300 ease-in-out text-blue-700 text-2xl sm:text-3xl font-mono'
