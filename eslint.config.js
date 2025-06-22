@@ -57,7 +57,10 @@ export default tseslint.config(
       ...jsxA11y.configs.recommended.rules,
       ...importPlugin.configs.recommended.rules,
       ...importPlugin.configs.typescript.rules,
-      'import/no-unresolved': ['error', { ignore: ['\\?.*$', '^/.*\\.(svg|png|jpg|jpeg|gif|ico)$'] }],
+      'import/no-unresolved': [
+        'error',
+        { ignore: ['\\?.*$', '^/.*\\.(svg|png|jpg|jpeg|gif|ico)$'] },
+      ],
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

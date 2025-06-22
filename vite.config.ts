@@ -13,13 +13,13 @@ export default defineConfig({
     react(),
     tailwindcss(),
     llmsPlugin({
-      llmsDir: 'llms'
+      llmsDir: 'llms',
     }),
     qrDevPlugin(),
     VitePluginRadar({
       microsoftClarity: {
-        id: 's34inct1pg'
-      }
+        id: 's34inct1pg',
+      },
     }),
     cloudflare(),
   ],

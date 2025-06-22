@@ -10,7 +10,9 @@ export default function qrPlugin(): Plugin {
         const resolvedUrls = (server.resolvedUrls?.network || []) as string[];
         const logger = server.config.logger;
         if (resolvedUrls.length > 0) {
-          logger.info('\nScan a QR code to open the dev server (network preferred):');
+          logger.info(
+            '\nScan a QR code to open the dev server (network preferred):'
+          );
           for (const url of resolvedUrls) {
             qrcode.generate(url, { small: true });
             logger.info(url + '\n');
@@ -25,7 +27,9 @@ export default function qrPlugin(): Plugin {
           } else {
             url = 'http://localhost:5173/';
           }
-          logger.info('\nScan this QR code to open the dev server (localhost fallback):');
+          logger.info(
+            '\nScan this QR code to open the dev server (localhost fallback):'
+          );
           qrcode.generate(url, { small: true });
           logger.info(url + '\n');
         }
