@@ -1,4 +1,5 @@
-import { useState, useCallback, lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
+import { useCounterStore } from './store';
 const viteLogo = '/vite.svg';
 import reactLogo from './assets/react.svg';
 const Footer = lazy(() => import('./Footer'));
@@ -8,11 +9,8 @@ const LOGO_SIZE = 96;
 const LOGO_PADDING = 6;
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const increment = useCallback(() => {
-    setCount((c) => c + 1);
-  }, []);
+  const count = useCounterStore((state) => state.count);
+  const increment = useCounterStore((state) => state.increment);
 
   return (
     <div className='bg-neutral-50 min-h-screen'>
