@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { cloudflare } from '@cloudflare/vite-plugin';
 import { execSync } from 'child_process';
 import { VitePWA } from 'vite-plugin-pwa';
+import SitemapPlugin from 'vite-plugin-sitemap';
 
 import llmsPlugin from './plugins/llmsPlugin.ts';
 import qrDevPlugin from './plugins/qrDevPlugin.ts';
@@ -51,6 +52,9 @@ export default defineConfig({
           },
         ],
       },
+    }),
+    SitemapPlugin({
+      hostname: 'https://mdgen.pages.dev',
     }),
   ],
 });
