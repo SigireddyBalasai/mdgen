@@ -1,32 +1,51 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import viteLogo from '/vite.svg';
 import reactLogo from './assets/react.svg';
 import Footer from './Footer';
 import Button from './components/Button';
 
+const LOGO_SIZE = 96;
+const LOGO_PADDING = 6;
+
 function App() {
   const [count, setCount] = useState(0);
+
+  const increment = useCallback(() => {
+    setCount((c) => c + 1);
+  }, []);
 
   return (
     <div className='bg-white min-h-screen'>
       <div>
         <div className='flex flex-col sm:flex-row justify-center items-center gap-8 pt-8'>
-          <a href='https://vite.dev' rel='noreferrer' target='_blank'>
+          <a
+            aria-label='Vite homepage'
+            href='https://vite.dev'
+            rel='noreferrer'
+            target='_blank'
+          >
             <img
               alt='Vite logo'
               className='h-24 w-24 p-6 transition-filter duration-300 hover:drop-shadow-[0_0_2em_#646cffaa]'
               src={viteLogo}
-              width={96}
-              height={96}
+              width={LOGO_SIZE}
+              height={LOGO_SIZE}
+              style={{ padding: LOGO_PADDING }}
             />
           </a>
-          <a href='https://react.dev' rel='noreferrer' target='_blank'>
+          <a
+            aria-label='React homepage'
+            href='https://react.dev'
+            rel='noreferrer'
+            target='_blank'
+          >
             <img
               alt='React logo'
               className='h-24 w-24 p-6 transition-filter duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] animate-spin-slow'
               src={reactLogo}
-              width={96}
-              height={96}
+              width={LOGO_SIZE}
+              height={LOGO_SIZE}
+              style={{ padding: LOGO_PADDING }}
             />
           </a>
         </div>
@@ -36,8 +55,19 @@ function App() {
         </h1>
 
         <div className='card bg-white/80 rounded-lg shadow p-8 my-8 flex flex-col items-center'>
-          <Button onClick={() => setCount(count => count + 1)}>
-            count is {count}
+          <Button
+            aria-label='Increment counter'
+            onClick={increment}
+            tabIndex={0}
+          >
+            <span
+              className='transition-all duration-300 ease-in-out text-blue-700 text-3xl font-mono'
+              style={{ display: 'inline-block', minWidth: 60 }}
+              aria-live='polite'
+            >
+              <span className='sr-only'>Current count: </span>
+              {count}
+            </span>
           </Button>
           <p className='mt-4 text-gray-700'>
             Edit{' '}
