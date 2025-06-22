@@ -64,7 +64,7 @@ function App() {
             className='focus-visible:ring-4 focus-visible:ring-blue-500 w-full sm:w-auto'
           >
             <span
-              className='transition-all duration-300 ease-in-out text-blue-700 text-2xl sm:text-3xl font-mono'
+              className='transition-all duration-300 ease-in-out text-gray-900 text-2xl sm:text-3xl font-mono'
               style={{ display: 'inline-block', minWidth: 60 }}
               aria-live='polite'
             >
