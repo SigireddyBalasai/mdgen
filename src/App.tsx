@@ -13,15 +13,19 @@ function App() {
         <a href='https://vite.dev' rel='noreferrer' target='_blank'>
           <img
             alt='Vite logo'
-            className='h-24 p-6 transition-filter duration-300 hover:drop-shadow-[0_0_2em_#646cffaa]'
+            className='h-24 w-24 p-6 transition-filter duration-300 hover:drop-shadow-[0_0_2em_#646cffaa]'
             src={viteLogo}
+            width={96}
+            height={96}
           />
         </a>
         <a href='https://react.dev' rel='noreferrer' target='_blank'>
           <img
             alt='React logo'
-            className='h-24 p-6 transition-filter duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] animate-spin-slow'
+            className='h-24 w-24 p-6 transition-filter duration-300 hover:drop-shadow-[0_0_2em_#61dafbaa] animate-spin-slow'
             src={reactLogo}
+            width={96}
+            height={96}
           />
         </a>
       </div>
