@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# cloudflare
+# Ignore Cloudflare Workers configuration files
+.wrangler
+.dev.vars*
